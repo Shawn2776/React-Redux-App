@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.dog-images {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.dog-images button {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px lightgray;
+  background-color: white;
+  color: black
+}
+
+.dog-images hr {
+  width: 50%
+}
+
+.dog-images button:hover {
+  background-color: black;
+  color: white
+}

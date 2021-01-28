@@ -2,21 +2,21 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getImage } from '../actions/index';
 
-function DogImage(props) {
+function DogImage({ error, getImage, isFetching, message }) {
 
   useEffect(() => {
-    props.getImage()
+    getImage()
   }, [])
 
   const clickHandler = () => {
-    props.getImage();
+    getImage();
   }
 
-  if (props.error) {
-    return <h2>Houston, we have a problem ... {props.error}</h2>
+  if (error) {
+    return <h2>Houston, we have a problem ... {error}</h2>
   }
 
-  if (props.isFetching) {
+  if (isFetching) {
     return <h2>Fetching the cutest pic ever, just for you!!</h2>
   }
 
@@ -25,7 +25,7 @@ function DogImage(props) {
     <div className="dog-images">
       <button onClick={clickHandler} >Get New Dog Image</button>
       <hr />
-      <img src={props.message} alt="dog picture"/>
+      <img src={message} alt="dog picture"/>
     </div>
   )
 }
